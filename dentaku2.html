@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<script src='jquery-2.1.1.min.js'></script>
+	<script src='dentaku2.js'></script>
+	<link rel="stylesheet" type="text/css" href="dentaku2.css">
+	<title>電卓</title>
+</head>
+<body>
+	<div id='title_content'>
+		<h1>電卓</h1>
+	</div>
+	<div id='answer_content'>
+		<input type='number' id='answer' value="0" />
+	</div>
+	<div id='calc_content'>
+		<table border="1">
+			<tr><td><label id='mc' onclick='memory_clear'>MC</label></td><td><label id='mp' onclick='memory_add'>M+</label></td><td><label id='MM' onclick='memory_minus'>M-</label></td><td><label id='memory_result'>MR</label></td></tr>
+			<tr><td colspan='3'><label id='ac' onclick='all_clear()'>AC</label></td><td><label id='break' onclick='break_cul()'>÷</label></td></tr>
+			<tr><td><label id='sevenBtn' onclick='seven_add()'>７</label></td><td><label id='eightBtn' onclick='eight_add()'>８</label></td><td><label id='nineBtn' onclick='nine_add()'>９</label></td><td><label id='multiplyBtn' onclick="multiply_cul()">✕</label></td></tr>
+			<tr><td><label id='fourBtn' onclick='four_add()'>４</label></td><td><label id='fiveBtn' onclick='five_add()'>５</label></td><td><label id='sixBtn' onclick='six_add()'>６</label></td><td><label id='minusBtn' onclick='minus_cul()'>ー</label></td></tr>
+			<tr><td><label id='oneBtn' onclick='one_add()'>１</label></td><td><label id='twoBtn' onclick='two_add()'>２</label></td><td><label id='threeBtn' onclick='three_add()'>３</label></td><td><label id='plusBtn' onclick='plus_cul()'>＋</label></td></tr>
+			<tr><td colspan='2'><label id='zeroBtn' onclick='zero_add()'>０</label></td><td><label id='dotBtn' onclick='dot_add()'>．</label></td><td><label id='gokeiBtn' onclick='goukei()'>＝</label></td></tr>
+		</table>
+		<input type='hidden' id='cul_endFlag' value='' />
+	</div>
+	<div id='end_content'>
+		<a href='dentaku.zip'>全ソース</a><br />
+		<label>このアプリはMITライセンスで公開しております。改変時はhiro.matsuno at gmail.comにご連絡下さい。atは書き換えてくださいね。</label><br />
+		<a href='http://sourceforge.jp/projects/opensource/wiki/licenses%2FMIT_license'>MITライセンスの全文（日本語訳）</a>
+	</div>
+
+</body>
+</html>

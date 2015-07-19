@@ -1,0 +1,115 @@
+//dentaku2.css
+//cssの初期設定
+#calc_content table tr td #mc{
+    height:16px;
+    width:30px;
+    text-align:center;
+}
+
+#calc_content table tr td #mp{
+    height:20px;
+    width:30px;
+    text-align:center;
+}
+
+#calc_content table tr td #MM{
+    height:20px;
+    width:30px;
+    text-align:center;
+}
+
+#calc_content table tr td #memory_result{
+    height:20px;
+    width:30px;
+    text-align:center;
+}
+
+#calc_content table tr td #break{
+    height:20px;
+    width:30px;
+    text-align:center;
+}
+
+#calc_content table tr td #sevenBtn{
+    height:20px;
+    width:30px;
+    text-align:center;
+}
+
+#calc_content table tr td #eightBtn{
+    height:20px;
+    width:30px;
+    text-align:center;
+}
+
+#calc_content table tr td #nineBtn{
+    height:20px;
+    width:30px;
+    text-align:center;
+}
+
+#calc_content table tr td #multiplyBtn{
+    height:20px;
+    width:30px;
+    text-align:center;
+}
+
+#calc_content table tr td #fourBtn{
+    height:20px;
+    width:30px;
+    text-align:center;
+}
+
+#calc_content table tr td #fiveBtn{
+    height:20px;
+    width:30px;
+    text-align:center;
+}
+
+#calc_content table tr td #sixBtn{
+    height:20px;
+    width:30px;
+    text-align:center;
+}
+
+#calc_content table tr td #minusBtn{
+    height:20px;
+    width:30px;
+    text-align:center;
+}
+
+#calc_content table tr td #oneBtn{
+    height:20px;
+    width:30px;
+    text-align:center;
+}
+
+#calc_content table tr td #twoBtn{
+    height:20px;
+    width:30px;
+    text-align:center;
+}
+
+#calc_content table tr td #threeBtn{
+    height:20px;
+    width:30px;
+    text-align:center;
+}
+
+#calc_content table tr td #plusBtn{
+    height:20px;
+    width:30px;
+    text-align:center;
+}
+
+#calc_content table tr td #dotBtn{
+    height:20px;
+    width:30px;
+    text-align:center;
+}
+
+#calc_content table tr td #gokeiBtn{
+    height:20px;
+    width:30px;
+    text-align:center;
+}
