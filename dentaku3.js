@@ -7,8 +7,17 @@ $(function () {
 	$('#answer').css('width','125px');
 //	$('#ac').css('text-align','center');
 	$('#answer').val(0);
-	localStorage.setItem('beforeValue',0);
-	localStorage.setItem('dotValue',0);
+	
+	//localStorage.lengthでデータ数を取得する
+	nowStorage = window.localStorage.length;
+	
+	
+	//値を調べ初期化内容を選ぶ
+	if(nowStorage == 0 ){
+	}else{
+		window.localStorage.setItem('beforeValue',0);
+		window.localStorage.setItem('dotValue',0);
+	}
 	$('#cul_endFlag').val(0);
 });
 
@@ -22,7 +31,7 @@ function all_clear(){
 }
 
 //1をおした時のアクション
-function one_add(){
+$('#oneBtn').click(function oneClick(){
 	//現在数値の取得
 	nowValue = $('#answer').val();
 	//計算済みフラグの取得
@@ -56,10 +65,10 @@ function one_add(){
 	}
 	//データを反映する
 	$('#answer').val(nowValue);
-}
+});
 
 //2をおした時のアクション
-function two_add(){
+$('#twoBtn').click(function twoClick(){
 	//現在数値の取得
 	nowValue = $('#answer').val();
 	//計算済みフラグの取得
@@ -96,7 +105,7 @@ function two_add(){
 	}
 	//データを反映する
 	$('#answer').val(nowValue);
-}
+});
 
 //3をおした時のアクション
 function three_add(){

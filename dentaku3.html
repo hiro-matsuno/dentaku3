@@ -16,12 +16,39 @@
 	</div>
 	<div id='calc_content'>
 		<table border="1">
-			<tr><td><input type='button' id='mc' value='mc' /></td><td><input type='button' id='mp' value='mp' /></td><td><input type="button" id='MM' value='MM' /></td><td><input type="button" id='memory_result' value='MR' /></td></tr>
-			<tr><td colspan='3'><input type='button' id='AC'  value='AC' /></td><td><input type='button' id='break' value='÷' /></td></tr>
-			<tr><td><input type="button" id='sevenBtn' value='7' /></td><td><input type='button' id='eightBtn' value='8' /></td><td><input type="button" id='nineBtn' value="9" /></td><td><input type='button' id='multiplyBtn' value='✕' /></td></tr>
-			<tr><td><input type="button" id='fourBtn' value="４" /></td><td><input type="button" id='fiveBtn' value="５" /></td><td><input type="button" id='sixBtn' value="６" /></td><td><input type="button" id='minusBtn' value='ー' /></td></tr>
-			<tr><td><input type="button" id='oneBtn' value='１' /></td><td><input type='button' id='twoBtn' onclick='two_add()'>２</label></td><td><label id='threeBtn' onclick='three_add()'>３</label></td><td><label id='plusBtn' onclick='plus_cul()'>＋</label></td></tr>
-			<tr><td colspan='2'><label id='zeroBtn' onclick='zero_add()'>０</label></td><td><label id='dotBtn' onclick='dot_add()'>．</label></td><td><label id='gokeiBtn' onclick='goukei()'>＝</label></td></tr>
+			<tr>
+				<td><input type='button' id='mc' value='MC' /></td>
+				<td><input type='button' id='mp' value='MP' /></td>
+				<td><input type="button" id='MM' value='MM' /></td>
+				<td><input type="button" id='memory_result' value='MR' /></td>
+			</tr>
+			<tr>
+				<td colspan='3'><input type='button' id='AC'  value='AC' /></td>
+				<td><input type='button' id='break' value='÷' /></td>
+			</tr>
+			<tr>
+				<td><input type="button" id='sevenBtn' value='7' /></td>
+				<td><input type='button' id='eightBtn' value='8' /></td>
+				<td><input type="button" id='nineBtn' value="9" /></td>
+				<td><input type='button' id='multiplyBtn' value='✕' /></td>
+			</tr>
+			<tr>
+				<td><input type="button" id='fourBtn' value="４" /></td>
+				<td><input type="button" id='fiveBtn' value="５" /></td>
+				<td><input type="button" id='sixBtn' value="６" /></td>
+				<td><input type="button" id='minusBtn' value='ー' /></td>
+			</tr>
+			<tr>
+				<td><input type="button" id='oneBtn' value='１' /></td>
+				<td><input type='button' id='twoBtn' value="２"></td>
+				<td><input type="button" id='threeBtn' value='３' /></td>
+				<td><input type="button" id='plusBtn' value='＋'></td>
+			</tr>
+			<tr>
+				<td colspan='2'><input type='button' id='zeroBtn' value='０' /></td>
+				<td><input type='button' id='dotBtn' value='．' /></td>
+				<td><input type='button' id='gokeiBtn' value='＝' /></td>
+			</tr>
 		</table>
 		<input type='hidden' id='cul_endFlag' value='' />
 	</div>
