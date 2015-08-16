@@ -23,13 +23,13 @@ $(function () {
 	$(document).ready({funcition(){
 		   $('#oneBtn').click(oneClick);
 		   $('#twoBtn').click(twoClick);
-		   $('#threeBtn').click(threeClick)
+		   $('#threeBtn').click(threeClick);
 		}
 	});
 });
 
 //データのクリア
-function all_clear(){
+function all_clearClick(){
 	$('#answer').css('text-align','right');
 	$('#answer').val(0);
 	localStorage.setItem('beforeValue',0);
@@ -115,7 +115,7 @@ function twoClick(){
 }
 
 //3をおした時のアクション
-function three_click(){
+function threeClick(){
 	//現在数値を取得
 	nowValue = $('#answer').val();
 	//計算済みフラグの取得
@@ -155,7 +155,7 @@ function three_click(){
 }
 
 //4をおした時のアクション
-function four_add(){
+function fourClick(){
 	//現在数値を取得
 	nowValue = $('#answer').val();
 	//計算済みフラグの取得
@@ -192,7 +192,7 @@ function four_add(){
 }
 
 //5をおした時のアクション
-function five_add(){
+function fiveClick(){
 	//現在数値を取得
 	nowValue = $('#answer').val();
 	//計算済みフラグの取得
@@ -215,7 +215,7 @@ function five_add(){
 }
 
 //6をおした時のアクション
-function six_add(){
+function sixClick(){
 	//現在数値の取得
 	nowValue = $('#answer').val();
 	//計算済みフラグの取得
@@ -252,7 +252,7 @@ function six_add(){
 }
 
 //7をおした時のアクション
-function seven_add(){
+function sevenClick(){
 	//現在数値の取得
 	nowValue = $('#answer').val();
 	//計算済みフラグの取得
@@ -289,7 +289,7 @@ function seven_add(){
 }
 
 //8をおした時のアクション
-function eight_add(){
+function eightClick(){
 	//現在数値の取得
 	nowValue = $('#answer').val();
 	//計算済みフラグの取得
@@ -326,7 +326,7 @@ function eight_add(){
 }
 
 //9をおした時のアクション
-function nine_add(){
+function nineClick(){
 	//現在数値の取得
 	nowValue = $('#answer').val();
 	//計算済みフラグの取得
@@ -363,7 +363,7 @@ function nine_add(){
 }
 
 //0をおした時のアクション
-function zero_add(){
+function zeroClick(){
 	//現在数値の取得
 	nowValue = $('#answer').val();
 	//計算済みフラグの取得
@@ -400,7 +400,7 @@ function zero_add(){
 }
 
 //÷ボタンをおした時の処理
-function break_cul(){
+function breakClick(){
 	//現在の数値を取得
 	nowValue = parseFloat($('#answer').val());
 	//beforeValueの取得
@@ -421,7 +421,7 @@ function break_cul(){
 }
 
 //×ボタンをおした時の処理
-function multiply_cul(){
+function multiplyClick(){
 	//現在数値を取得
 	nowValue = parseFloat($('#answer').val());
 	//beforeValueの取得
@@ -445,7 +445,7 @@ function multiply_cul(){
 }
 
 //-ボタンをおした時の処理
-function minus_cul(){
+function minusClick(){
 	//現在数値を取得
 	nowValue = parseFloat($('#answer').val());
 	//beforeValueの取得
@@ -466,7 +466,7 @@ function minus_cul(){
 }
 
 //+ボタンをおした時の処理
-function plus_cul(){
+function plusClick(){
 	//現在数値を取得
 	nowValue = parseFloat($('#answer').val());
 	//beforeValueの取得
@@ -483,7 +483,7 @@ function plus_cul(){
 }
 
 //小数点ボタンをおした時の処理
-function　dot_add(){
+function　dotClick(){
 	//現在数値の取得
 	nowValue = $('#answer').val();
 	//小数点フラグの設定
@@ -499,7 +499,7 @@ function　dot_add(){
 }
 
 //=ボタンをおした時の処理
-function goukei(){
+function goukeiClick(){
 	//現在数値の取得
 	nowValue = parseFloat($('#answer').val());
 	//計算後の数値の取得
