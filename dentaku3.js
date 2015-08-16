@@ -19,6 +19,13 @@ $(function () {
 		window.localStorage.setItem('dotValue',0);
 	}
 	$('#cul_endFlag').val(0);
+	//クリックアクションの初期化
+	$(document).ready({funcition(){
+		   $('#oneBtn').click(oneClick);
+		   $('#twoBtn').click(twoClick);
+		   $('#threeBtn').click(threeClick)
+		}
+	});
 });
 
 //データのクリア
@@ -31,7 +38,7 @@ function all_clear(){
 }
 
 //1をおした時のアクション
-$('#oneBtn').click(function oneClick(){
+function oneClick(){
 	//現在数値の取得
 	nowValue = $('#answer').val();
 	//計算済みフラグの取得
@@ -65,10 +72,10 @@ $('#oneBtn').click(function oneClick(){
 	}
 	//データを反映する
 	$('#answer').val(nowValue);
-});
+}
 
 //2をおした時のアクション
-$('#twoBtn').click(function twoClick(){
+function twoClick(){
 	//現在数値の取得
 	nowValue = $('#answer').val();
 	//計算済みフラグの取得
@@ -105,10 +112,10 @@ $('#twoBtn').click(function twoClick(){
 	}
 	//データを反映する
 	$('#answer').val(nowValue);
-});
+}
 
 //3をおした時のアクション
-function three_add(){
+function three_click(){
 	//現在数値を取得
 	nowValue = $('#answer').val();
 	//計算済みフラグの取得
