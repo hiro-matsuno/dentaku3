@@ -1,6 +1,102 @@
 /**
  * 
  */
+ 
+//プログラムの初期化
+$(document).ready({funcition(){
+	//1をおした時のアクション
+	$('#oneBtn').click(function oneClick(){
+		//現在数値の取得
+		nowValue = $('#answer').val();
+		//計算済みフラグの取得
+		cul_endFlag = $('#cul_endFlag').val();
+		//小数点フラグを取得する
+		dotValue = localStorage.getItem('dotValue');
+		//現在数値が入っているかを確認し追加する
+		if(cul_endFlag == 0){
+			if(nowValue.match(/^-?[0-9]+\.[0-9]+$/)){
+				if(dotValue == 1){
+					nowValue = nowValue + 1;
+				}else if(dotValue == 0){
+					nowValue = nowValue + 1;
+				}
+			}else if(nowValue == 0){
+				if(dotValue == 1){
+					nowValue = nowValue + 1;
+				}else if(dotValue == 0){
+					nowValue = 1;
+				}
+			}else if(nowValue != 0){
+				if(dotValue == 1){
+					nowValue = nowValue + 1;
+				}else if(dotValue == 0){
+					nowValue = nowValue + 1;
+				}
+			}
+		}else if(cul_endFlag == 1){
+			nowValue = 1;
+			$('#cul_endFlag').val(0);
+		}
+		//データを反映する
+		$('#answer').val(nowValue);
+	});
+	
+	//2をおした時のアクション
+	$('#twoBtn').click(function twoClick(){
+		//現在数値の取得
+		nowValue = $('#answer').val();
+		//計算済みフラグの取得
+		cul_endFlag = $('#cul_endFlag').val();
+		//小数点フラグの取得
+		dotValue = localStorage.getItem('dotValue');
+		//現在数値が入っているかを確認し追加
+		if(cul_endFlag == 0){
+			if(nowValue.match(/^-?[0-9]+\.[0-9]+$/)){
+				//小数点フラグの確認
+				if(dotValue == 1){
+					nowValue = nowValue + 2;
+				}else if(dotValue == 0){
+					nowValue = nowValue + 2;
+				}
+			}else if(nowValue == 0){
+				//小数点フラグの確認
+				if(dotValue == 1){
+					nowValue = nowValue + 2;
+				}else if(dotValue == 0){
+					nowValue = 2;
+				}
+			}else if(nowValue != 0){
+				//小数点フラグの確認
+				if(dotValue == 0){
+					nowValue = nowValue + 2;
+				}else if(dotValue == 1){
+					nowValue = nowValue + 2;
+				}
+			}
+		}else if(cul_endFlag == 1){
+			nowValue = 2;
+			$('#cul_endFlag').val(0);
+		}
+		//データを反映する
+		$('#answer').val(nowValue);
+	});
+	$('#threeBtn').click(threeClick);
+	$('#fourBtn').click();
+	$('#fiveBtn').click();
+	$('#sixBtn').click();
+	$('#sevenBtn').click();
+	$('#eightBtn').click();
+	$('#nineBtn').click();
+	$('#zeroBtn').click();
+	$('#dotBtn').click();
+	$('#plusBtn').click();
+	$('#minusBtn').click();
+	$('#multiplyBtn').click();
+	$('#breakBtn').click();
+	$('#gokeiBtn').click();
+	$('#ACBtn').click();
+});
+
 
 $(function () {
 	$('#answer').css('text-align','right');
@@ -20,12 +116,6 @@ $(function () {
 	}
 	$('#cul_endFlag').val(0);
 	//クリックアクションの初期化
-	$(document).ready({funcition(){
-		   $('#oneBtn').click(oneClick);
-		   $('#twoBtn').click(twoClick);
-		   $('#threeBtn').click(threeClick);
-		}
-	});
 });
 
 //データのクリア
@@ -37,82 +127,8 @@ function all_clearClick(){
 	localStorage.setItem('dotValue',0);
 }
 
-//1をおした時のアクション
-function oneClick(){
-	//現在数値の取得
-	nowValue = $('#answer').val();
-	//計算済みフラグの取得
-	cul_endFlag = $('#cul_endFlag').val();
-	//小数点フラグを取得する
-	dotValue = localStorage.getItem('dotValue');
-	//現在数値が入っているかを確認し追加する
-	if(cul_endFlag == 0){
-		if(nowValue.match(/^-?[0-9]+\.[0-9]+$/)){
-			if(dotValue == 1){
-				nowValue = nowValue + 1;
-			}else if(dotValue == 0){
-				nowValue = nowValue + 1;
-			}
-		}else if(nowValue == 0){
-			if(dotValue == 1){
-				nowValue = nowValue + 1;
-			}else if(dotValue == 0){
-				nowValue = 1;
-			}
-		}else if(nowValue != 0){
-			if(dotValue == 1){
-				nowValue = nowValue + 1;
-			}else if(dotValue == 0){
-				nowValue = nowValue + 1;
-			}
-		}
-	}else if(cul_endFlag == 1){
-		nowValue = 1;
-		$('#cul_endFlag').val(0);
-	}
-	//データを反映する
-	$('#answer').val(nowValue);
-}
 
-//2をおした時のアクション
-function twoClick(){
-	//現在数値の取得
-	nowValue = $('#answer').val();
-	//計算済みフラグの取得
-	cul_endFlag = $('#cul_endFlag').val();
-	//小数点フラグの取得
-	dotValue = localStorage.getItem('dotValue');
-	//現在数値が入っているかを確認し追加
-	if(cul_endFlag == 0){
-		if(nowValue.match(/^-?[0-9]+\.[0-9]+$/)){
-			//小数点フラグの確認
-			if(dotValue == 1){
-				nowValue = nowValue + 2;
-			}else if(dotValue == 0){
-				nowValue = nowValue + 2;
-			}
-		}else if(nowValue == 0){
-			//小数点フラグの確認
-			if(dotValue == 1){
-				nowValue = nowValue + 2;
-			}else if(dotValue == 0){
-				nowValue = 2;
-			}
-		}else if(nowValue != 0){
-			//小数点フラグの確認
-			if(dotValue == 0){
-				nowValue = nowValue + 2;
-			}else if(dotValue == 1){
-				nowValue = nowValue + 2;
-			}
-		}
-	}else if(cul_endFlag == 1){
-		nowValue = 2;
-		$('#cul_endFlag').val(0);
-	}
-	//データを反映する
-	$('#answer').val(nowValue);
-}
+
 
 //3をおした時のアクション
 function threeClick(){
