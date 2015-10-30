@@ -80,7 +80,45 @@ $(document).ready({funcition(){
 		//データを反映する
 		$('#answer').val(nowValue);
 	});
-	$('#threeBtn').click(threeClick);
+	$('#threeBtn').click(function threeClick(){
+		//現在数値を取得
+		nowValue = $('#answer').val();
+		//計算済みフラグの取得
+		cul_endFlag = $('#cul_endFlag').val();
+		//小数点フラグの取得
+		dotValue = localStorage.getItem('dotValue');
+		//現在数値が入っているかを確認し追加
+		if(cul_endFlag == 0){
+			if(nowValue.match(/^-?[0-9]+\.[0-9]+$/)){
+				//小数点フラグの確認
+				if(dotValue == 1){
+					nowValue = nowValue + 3;
+				}else if(dotValue == 0){
+					nowValue = nowValue + 3;
+				}
+			}else if(nowValue == 0){
+				//小数点フラグの確認
+				if(dotValue == 1){
+					nowValue = nowValue + 3;
+				}else if(dotValue == 0){
+					nowValue = 3;
+				}
+			}else if(nowValue != 0){
+				//小数点フラグの確認
+				if(dotValue == 1){
+					nowValue = nowValue + 3;
+				}else if(dotValue == 0){
+					nowValue = nowValue + 3;
+				}
+			}
+		}else if(cul_endFlag == 1){
+			nowValue = 3;
+			$('#cul_endFlag').val(0);
+		}
+		//データを反映する
+		$('#answer').val(nowValue);
+
+	});
 	$('#fourBtn').click();
 	$('#fiveBtn').click();
 	$('#sixBtn').click();
@@ -132,43 +170,7 @@ function all_clearClick(){
 
 //3をおした時のアクション
 function threeClick(){
-	//現在数値を取得
-	nowValue = $('#answer').val();
-	//計算済みフラグの取得
-	cul_endFlag = $('#cul_endFlag').val();
-	//小数点フラグの取得
-	dotValue = localStorage.getItem('dotValue');
-	//現在数値が入っているかを確認し追加
-	if(cul_endFlag == 0){
-		if(nowValue.match(/^-?[0-9]+\.[0-9]+$/)){
-			//小数点フラグの確認
-			if(dotValue == 1){
-				nowValue = nowValue + 3;
-			}else if(dotValue == 0){
-				nowValue = nowValue + 3;
-			}
-		}else if(nowValue == 0){
-			//小数点フラグの確認
-			if(dotValue == 1){
-				nowValue = nowValue + 3;
-			}else if(dotValue == 0){
-				nowValue = 3;
-			}
-		}else if(nowValue != 0){
-			//小数点フラグの確認
-			if(dotValue == 1){
-				nowValue = nowValue + 3;
-			}else if(dotValue == 0){
-				nowValue = nowValue + 3;
-			}
-		}
-	}else if(cul_endFlag == 1){
-		nowValue = 3;
-		$('#cul_endFlag').val(0);
 	}
-	//データを反映する
-	$('#answer').val(nowValue);
-}
 
 //4をおした時のアクション
 function fourClick(){
