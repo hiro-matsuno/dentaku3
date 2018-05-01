@@ -1,85 +1,10 @@
-/**
- * 
- */
- 
-//プログラムの初期化
-$(document).ready({funcition(){
-	//1をおした時のアクション
-	$('#oneBtn').click(function oneClick(){
-		//現在数値の取得
-		nowValue = $('#answer').val();
-		//計算済みフラグの取得
-		cul_endFlag = $('#cul_endFlag').val();
-		//小数点フラグを取得する
-		dotValue = localStorage.getItem('dotValue');
-		//現在数値が入っているかを確認し追加する
-		if(cul_endFlag == 0){
-			if(nowValue.match(/^-?[0-9]+\.[0-9]+$/)){
-				if(dotValue == 1){
-					nowValue = nowValue + 1;
-				}else if(dotValue == 0){
-					nowValue = nowValue + 1;
-				}
-			}else if(nowValue == 0){
-				if(dotValue == 1){
-					nowValue = nowValue + 1;
-				}else if(dotValue == 0){
-					nowValue = 1;
-				}
-			}else if(nowValue != 0){
-				if(dotValue == 1){
-					nowValue = nowValue + 1;
-				}else if(dotValue == 0){
-					nowValue = nowValue + 1;
-				}
-			}
-		}else if(cul_endFlag == 1){
-			nowValue = 1;
-			$('#cul_endFlag').val(0);
-		}
-		//データを反映する
-		$('#answer').val(nowValue);
-	});
-	
-	//2をおした時のアクション
-	$('#twoBtn').click(function twoClick(){
-		//現在数値の取得
-		nowValue = $('#answer').val();
-		//計算済みフラグの取得
-		cul_endFlag = $('#cul_endFlag').val();
-		//小数点フラグの取得
-		dotValue = localStorage.getItem('dotValue');
-		//現在数値が入っているかを確認し追加
-		if(cul_endFlag == 0){
-			if(nowValue.match(/^-?[0-9]+\.[0-9]+$/)){
-				//小数点フラグの確認
-				if(dotValue == 1){
-					nowValue = nowValue + 2;
-				}else if(dotValue == 0){
-					nowValue = nowValue + 2;
-				}
-			}else if(nowValue == 0){
-				//小数点フラグの確認
-				if(dotValue == 1){
-					nowValue = nowValue + 2;
-				}else if(dotValue == 0){
-					nowValue = 2;
-				}
-			}else if(nowValue != 0){
-				//小数点フラグの確認
-				if(dotValue == 0){
-					nowValue = nowValue + 2;
-				}else if(dotValue == 1){
-					nowValue = nowValue + 2;
-				}
-			}
-		}else if(cul_endFlag == 1){
-			nowValue = 2;
-			$('#cul_endFlag').val(0);
-		}
-		//データを反映する
-		$('#answer').val(nowValue);
-	});
+let cul_endFlag = "0";
+let nowValue = "0";
+let dotValue = "0";
+let cul_value= "";
+$(document).ready(function(){
+
+
 	$('#threeBtn').click(function threeClick(){
 		//現在数値を取得
 		nowValue = $('#answer').val();
@@ -137,6 +62,7 @@ $(document).ready({funcition(){
 
 
 $(function () {
+
 	$('#answer').css('text-align','right');
 	$('#answer').css('width','125px');
 //	$('#ac').css('text-align','center');
@@ -165,16 +91,36 @@ function all_clearClick(){
 	localStorage.setItem('dotValue',0);
 }
 
+//1を押した動作
+$(document).on('click','#oneBtn', function() {
+		alert('dotValue='+ dotValue);
+		//現在数値の取得
+		nowValue = $('#answer').val();
+		//計算済みフラグの取得
+		cul_endFlag = $('#cul_endFlag').val();
+		//小数点フラグを取得する
+		dotValue = localStorage.getItem('dotValue');
+		//現在数値が入っているかを確認し追加する
+		if(cul_endFlag == 0){
+			if(nowValue.match(/^-?[0-9]+\.[0-9]+$/)){
+				nowValue = nowValue + 1;
+			}else if(nowValue == 0){
+				nowValue = 1;
+			}else if(nowValue != 0){
+				nowValue = nowValue + 1;
+			}
+		}else if(cul_endFlag == 1 || nowValue == 0){
+			nowValue = 1;
+			$('#cul_endFlag').val(0);
+		}
+		alert('nowValue='+ nowValue);
+		//データを反映する
+		$('#answer').val(nowValue);
+});
 
-
-
-//3をおした時のアクション
-function threeClick(){
-	}
-
-//4をおした時のアクション
-function fourClick(){
-	//現在数値を取得
+//2をおした時のアクション
+$(document).on('click','#twoBtn', function() {
+	//現在数値の取得
 	nowValue = $('#answer').val();
 	//計算済みフラグの取得
 	cul_endFlag = $('#cul_endFlag').val();
@@ -183,54 +129,99 @@ function fourClick(){
 	//現在数値が入っているかを確認し追加
 	if(cul_endFlag == 0){
 		if(nowValue.match(/^-?[0-9]+\.[0-9]+$/)){
-			if(dotValue == 1){
-				nowValue = nowValue + 4;
-			}else if(dotValue == 0){
-				nowValue = nowValue + 4;
-			}
+				nowValue = parseInt(nowValue) + 2;
 		}else if(nowValue == 0){
-			if(dotValue == 1){
-				nowValue = nowValue + 4;
-			}else if(dotValue == 0){
-				nowValue = 4;
-			}
+				nowValue = 2;
 		}else if(nowValue != 0){
-			if(dotValue == 0){
-				nowValue = nowValue + 4;
-			}else if(dotValue == 1){
-				nowValue = nowValue + 4;
-			}
+				nowValue = nowValue + 2;
 		}
-	}else if(cul_endFlag == 1){
+	}else if(cul_endFlag == 1 ){
+		nowValue = 2;
+		$('#cul_endFlag').val(0);
+	}
+	//データを反映する
+	$('#answer').val(nowValue);
+});
+
+
+
+//3をおした時のアクション
+$(document).on('click','#threeBtn', function() {
+	//現在数値の取得
+	nowValue = $('#answer').val();
+	//計算済みフラグの取得
+	cul_endFlag = $('#cul_endFlag').val();
+	//小数点フラグの取得
+	dotValue = localStorage.getItem('dotValue');
+	//現在数値が入っているかを確認し追加
+	if(cul_endFlag == 0){
+		if(nowValue.match(/^-?[0-9]+\.[0-9]+$/)){
+				nowValue = parseInt(nowValue) + 3;
+		}else if(nowValue == 0){
+				nowValue = 3;
+		}else if(nowValue != 0){
+				nowValue = nowValue + 3;
+		}
+	}else if(cul_endFlag == 1 ){
+		nowValue = 3;
+		$('#cul_endFlag').val(0);
+	}
+	//データを反映する
+	$('#answer').val(nowValue);	
+
+});
+
+//4をおした時のアクション
+$(document).on('click','#fourBtn', function() {
+	//現在数値の取得
+	nowValue = $('#answer').val();
+	//計算済みフラグの取得
+	cul_endFlag = $('#cul_endFlag').val();
+	//小数点フラグの取得
+	dotValue = localStorage.getItem('dotValue');
+	//現在数値が入っているかを確認し追加
+	if(cul_endFlag == 0){
+		if(nowValue.match(/^-?[0-9]+\.[0-9]+$/)){
+				nowValue = parseInt(nowValue) + 4;
+		}else if(nowValue == 0){
+				nowValue = 4;
+		}else if(nowValue != 0){
+				nowValue = nowValue + 4;
+		}
+	}else if(cul_endFlag == 1 ){
 		nowValue = 4;
 		$('#cul_endFlag').val(0);
 	}
 	//データを反映する
-	$('#answer').val(nowValue);
-}
+	$('#answer').val(nowValue);	
+
+});
 
 //5をおした時のアクション
-function fiveClick(){
-	//現在数値を取得
+$(document).on('click','#fiveBtn', function() {
+	//現在数値の取得
 	nowValue = $('#answer').val();
 	//計算済みフラグの取得
 	cul_endFlag = $('#cul_endFlag').val();
+	//小数点フラグの取得
+	dotValue = localStorage.getItem('dotValue');
 	//現在数値が入っているかを確認し追加
 	if(cul_endFlag == 0){
 		if(nowValue.match(/^-?[0-9]+\.[0-9]+$/)){
-			nowValue = nowValue + 5;
+				nowValue = parseInt(nowValue) + 55;
 		}else if(nowValue == 0){
-			nowValue = 5;
+				nowValue = 5;
 		}else if(nowValue != 0){
-			nowValue = nowValue + 5;
+				nowValue = nowValue + 5;
 		}
-	}else if(cul_endFlag == 1){
+	}else if(cul_endFlag == 1 ){
 		nowValue = 5;
 		$('#cul_endFlag').val(0);
 	}
 	//データを反映する
-	$('#answer').val(nowValue);
-}
+	$('#answer').val(nowValue);	
+
+});
 
 //6をおした時のアクション
 function sixClick(){
