@@ -224,7 +224,7 @@ $(document).on('click','#fiveBtn', function() {
 });
 
 //6をおした時のアクション
-function sixClick(){
+$(document).on('click','#sixBtn', function() {
 	//現在数値の取得
 	nowValue = $('#answer').val();
 	//計算済みフラグの取得
@@ -258,7 +258,7 @@ function sixClick(){
 	}
 	//データを反映する
 	$('#answer').val(nowValue);
-}
+});
 
 //7をおした時のアクション
 function sevenClick(){
